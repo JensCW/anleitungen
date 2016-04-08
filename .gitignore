@@ -1,4 +1,6 @@
-# compiled PDFs
+# compiled documents
+*.dvi
+*.ps
 *.pdf
 
 # LaTeX
