@@ -1,0 +1,51 @@
+%\usepackage[framemethod=tikz]{mdframed}
+%\mdfdefinestyle{pythonhinweis}{%
+%  rightline=true,
+%  innerleftmargin=10,
+%  innerrightmargin=10,
+%  outerlinewidth=3pt,
+%  topline=false,
+%  rightline=true,
+%  bottomline=false,
+%  skipabove=\topsep,
+%  skipbelow=\topsep
+%}
+%\newenvironment{pythonhinweis}{
+%    \begin{mdframed}[style=pythonhinweis,frametitle=Hinweis für die Auswertung in Python:]
+%}{
+%\end{mdframed}
+%}
+
+\definecolor{lightgray}{rgb}{0.83, 0.83, 0.83}
+
+\usepackage{mdframed}
+\mdfdefinestyle{usingx}{%
+  rightline=false,
+  leftline=false,
+  topline=true,
+  bottomline=true,
+  linewidth=1pt,
+  linecolor=lightgray,
+  innertopmargin=0pt,
+  innerbottommargin=10pt,
+  frametitleaboveskip=-\ht\strutbox,
+  frametitlealignment=\raggedleft,
+  frametitlefont=\normalfont\small,
+}
+
+\newenvironment{usingx}[1]{
+    \begin{mdframed}[style=usingx,frametitle={\colorbox{white}{\space Bei Auswertung mit #1\space}}]
+}{
+\end{mdframed}
+}
+
+\newenvironment{usingpython}{
+    \begin{usingx}{Python}
+}{
+    \end{usingx}
+}
+\newenvironment{usingorigin}{
+    \begin{usingx}{Origin}
+}{
+    \end{usingx}
+}

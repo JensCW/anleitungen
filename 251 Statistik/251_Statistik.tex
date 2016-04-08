@@ -1,51 +1,10 @@
-\documentclass[
-    landscape,
-    twocolumn
-]{article}
-\usepackage{german}
-\usepackage[latin1]{inputenc}
-\usepackage{dcolumn}
-\usepackage{longtable}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{wrapfig}
-\usepackage{epsfig}
-\usepackage{fancyheadings}
-\usepackage{multirow}
+\documentclass{../papanleitung}
 
-\textheight=16.2cm \textwidth=25 cm \evensidemargin=\oddsidemargin
-\setlength{\headsep}{25pt}
-
-
-\font \tams  = cmmib10   scaled \magstep1 \font \tamss =cmmib10
-\font \tenbfne = cmb10   scaled \magstep1 \font \sevenbfne = cmb10
-\def\vek#1{\ifmmode{\textfont1=\tams\scriptfont1=\tamss
-              \textfont0=\tenbfne\scriptfont0=\sevenbfne
-              \mathchoice{\hbox{$\displaystyle#1$}}{\hbox{$\textstyle#1$}}
-              {\hbox{$\scriptstyle#1$}}{\hbox{$\scriptscriptstyle#1$}}}
-            \else \vrule width 4pt\ #1\ \fi}
-
- \setlength{\parindent}{0pt}
- \setlength{\voffset}{-0.8in}
- \setlength{\hoffset}{-0.088in}
- \setlength{\columnsep}{1cm}
-
+\def\versuchnr{251}
+\def\versuchshorttitle{Statistik}
+\def\versuchtitle{Statistik des radioaktiven Zerfalls}
 
 \begin{document}
-\setlength{\extrarowheight}{4pt} \pagestyle{fancyplain}
- \lhead[]{\large  Physikalisches
-Anf\"{a}ngerpraktikum der Universit\"{a}t Heidelberg - Praktikum II}
-\rhead{\large Versuch 251 Statistik}
-
-\cfoot{\large\vspace{0.1in}$\qquad$\rm\thepage}
-\lfoot{\copyright~Dr. J.Wagner - Physikalisches Anf\"{a}ngerpraktikum
--~V.~1.2~Stand~07/2010} \setlength{\footrulewidth}{0.4pt}
-\renewcommand{\thesection}{\Roman{section}}
-
-
-\begin{center}
-\LARGE\bf{Versuch 251\\ Statistik des radioaktiven Zerfalls}
-\end{center}
 
 \begin{figure}[h]
 \begin{minipage}[c]{12cm}
@@ -630,7 +589,15 @@ durch.
 \end{enumerate}
 
 \section{Auswertung}
-Achtung: Da es im Laborbuch nicht m\"{o}glich ist nachzuvollziehen, welche Rechnungen Sie mit Origin durchgef\"{u}hrt haben, muss bei allen Spaltenberechnungen die entsprechende Rechenvorschrift (Formel) im Laborbuch kommentiert werden.
+
+\begin{usingpython}
+Führen Sie die Rechnungen in einem vollständig dokumentierten Jupyter Notebook durch und legen Sie es Ihrem Laborbuch anschließend ausgedruckt bei.
+\end{usingpython}
+
+\begin{usingorigin}
+Da es im Laborbuch nicht m\"{o}glich ist nachzuvollziehen, welche Rechnungen Sie mit Origin durchgef\"{u}hrt haben, muss bei allen Spaltenberechnungen die entsprechende Rechenvorschrift (Formel) im Laborbuch kommentiert werden.
+\end{usingorigin}
+
 \begin{itemize}
   \item Plateaubereich des Z\"{a}hlrohrs.\\
   \\Werten Sie die Differenzen $(n(U_0+100~V) - n(U_0))$  bei den jeweiligen Messzeiten aus und
@@ -641,12 +608,16 @@ Achtung: Da es im Laborbuch nicht m\"{o}glich ist nachzuvollziehen, welche Rechn
     \item [b)]	Welche prozentuale Variation der Z\"{a}hlrate ist bei einer Spannungserh\"{o}hung um 100 V m\"{o}glich bei einem Vertrauensniveau von ca. 68$\%$ und von ca. 95$\%$?
     \item [c)]	Wie lange m\"{u}ssten Sie messen um den Plateauanstieg auf 1 $\%$ genau zu kennen?
   \end{itemize}
-  \item  Auswertung der Daten mit hoher mittlerer Ereigniszahl.\\
-  \\Die Daten der Messreihe wurden vom Messprogramm in die Datei  \verb"Statistik.dat" im Ordner  \verb"Messungen"  auf dem Desktop gespeichert. Der Datensatz besteht aus zwei Spalten, der Anzahl der Zerf\"{a}lle/Zeiteinheit und deren H\"{a}ufigkeit.
+  \item  Auswertung der Daten mit hoher mittlerer Ereigniszahl.
+
+  Die Daten der Messreihe wurden vom Messprogramm in die Datei  \verb"Statistik.dat" im Ordner  \verb"Messungen"  auf dem Desktop gespeichert. Der Datensatz besteht aus zwei Spalten, der Anzahl der Zerf\"{a}lle/Zeiteinheit und deren H\"{a}ufigkeit.
+  
+  \begin{usingorigin}
     Starten Sie das Programm \verb"Origin" vom Desktop aus und importieren Sie die Messdaten:
 \verb"Datei" $\rightarrow$ \verb"Importieren" $\rightarrow$ \verb"Einzelnes ASCII". Beschriften Sie die Spalten und erzeugen Sie eine weitere Spalte (\verb"Spalte" $\rightarrow$ \verb"Spalten hinzufuegen") mit den statistischen Fehlern. Der statistische Fehler berechnet sich aus der Quadratwurzel der gemessenen Ereignisse: Dazu die zu berechnende Spalte markieren, Rechtsklick auf den Spaltenkopf $\rightarrow$ \verb"Spaltenwerte errechnen" ausw\"{a}hlen und die entsprechende Formel angeben. Setzen Sie diese Spalte als  Y-Fehlerbalken: \verb"Spalte" $\rightarrow$ \verb"Setzen als" $\rightarrow$ \verb"Y-Fehler" und beschriften Sie diese entsprechend.
 
 Zeichnen Sie von den Daten ein Punktdiagramm mit Fehlerbalken (alle Spalten ausw\"{a}hlen  $\rightarrow$ \verb"Zeichnen" $\rightarrow$ \verb"Symbol" $\rightarrow$ \verb"Punktdiagramm"). Stellen Sie geeignete $x$- und $y$-Bereiche ein.
+\end{usingorigin}
 
 Fitten Sie an die Daten eine Gaussfunktion gem\"{a}{\ss}:
 
